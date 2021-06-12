@@ -4,8 +4,9 @@ import java.io.InputStream;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.TokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
 
 @SuppressWarnings("deprecation")
 public class Main {
@@ -24,7 +25,6 @@ public class Main {
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		LinguagemParser parser = new LinguagemParser((TokenStream) tokens);
 
-		System.out.println(tokens.getTokens());
 		
 		ParseTree tree = parser.programa();
 

@@ -28,17 +28,47 @@ public interface LinguagemVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAcao(LinguagemParser.AcaoContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link LinguagemParser#lista_var}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLista_var(LinguagemParser.Lista_varContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link LinguagemParser#definicao}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitDefinicao(LinguagemParser.DefinicaoContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link LinguagemParser#var_def}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVar_def(LinguagemParser.Var_defContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LinguagemParser#arr_def}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArr_def(LinguagemParser.Arr_defContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link LinguagemParser#if_acao}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitIf_acao(LinguagemParser.If_acaoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LinguagemParser#for_acao}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFor_acao(LinguagemParser.For_acaoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LinguagemParser#while_acao}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWhile_acao(LinguagemParser.While_acaoContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LinguagemParser#acao_bloco}.
 	 * @param ctx the parse tree
@@ -106,6 +136,20 @@ public interface LinguagemVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitIntFator(LinguagemParser.IntFatorContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code stringFator}
+	 * labeled alternative in {@link LinguagemParser#fator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStringFator(LinguagemParser.StringFatorContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code floatFator}
+	 * labeled alternative in {@link LinguagemParser#fator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFloatFator(LinguagemParser.FloatFatorContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code idFator}
 	 * labeled alternative in {@link LinguagemParser#fator}.
